@@ -3,6 +3,7 @@ AngularJS-Toaster
 
 **AngularJS Toaster** is an AngularJS port of the **toastr** non-blocking notification jQuery library. It requires AngularJS v1.2.6 or higher and angular-animate for the CSS3 transformations. 
 (I would suggest to use /1.2.8/angular-animate.js, there is a weird blinking in newer versions.)
+There is one change from original AngularJS Toaster - method remove. You can add id to any of your toast and then remove it by this id.
 
 ### Current Version 0.4.12
 
@@ -44,6 +45,8 @@ bower install --save angularjs-toaster
 	    $scope.pop = function(){
 	        toaster.pop('success', "title", "text");
 	    };
+	    toaster.pop({type: 'warning', title: 'some title', id: 'warning-toast'});
+	    toaster.remove('warning-toast');
 	});
 ```
 
